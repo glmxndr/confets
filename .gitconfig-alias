@@ -5,6 +5,8 @@ ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decor
 le = log --oneline --decorate
 lg = log --graph --oneline --decorate --all
 
+la = "!git config -l | grep alias | cut -c 7-"
+
 rh  = reset HEAD   --hard 
 rh1 = reset HEAD^  --hard 
 rh2 = reset HEAD^^ --hard 
