@@ -11,7 +11,7 @@ git clone https://github.com/edkolev/tmuxline.vim ~/.vim/bundle/tmuxline.vim
 
 # Color scheme
 mkdir -p ~/.vim/colors
-curl -LSso ~/.vim/colors/papaya.vim https://raw.githubusercontent.com/HenryNewcomer/vim-theme-papaya/master/colors/papaya.vim
+curl -LSso ~/.vim/colors/zenburn.vim https://raw.githubusercontent.com/jnurmine/Zenburn/master/colors/zenburn.vim
 
 # Syntastic
 git clone --depth=1 https://github.com/vim-syntastic/syntastic.git ~/.vim/bundle/syntastic

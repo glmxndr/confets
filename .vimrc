@@ -11,7 +11,7 @@ let mapleader=','
 let g:mapleader=','
 
 " ### Color scheme
-colorscheme papaya
+colorscheme zenburn
 set background=dark
 
 " ### status line
