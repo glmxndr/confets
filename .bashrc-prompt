@@ -64,6 +64,6 @@ P_RETVAL="$P_RED\`nonzero_return\`"
 P_USERHOST="$P_CYAN\u@\h$P_RESETCOLOR"
 P_PATH="$P_YELLOW\w"
 P_GIT="$P_MAGENTA\`parse_git_branch\`"
-P_PROMPT="$P_GREEN\\$ $P_RESETCOLOR"
+P_PROMPT="$P_GREEN>>= $P_RESETCOLOR"
 
 export PS1="\n$P_RETVAL \n$P_TIME $P_USERHOST:$P_PATH $P_GIT\n$P_PROMPT"
