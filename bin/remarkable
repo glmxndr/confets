@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+case "$1" in
+upload)
+  curl --form "file=@\"$2\"" "http://10.11.99.1/upload"
+;;
+addtpl)
+  FILENAME=$(basename "$2")
+  scp -q "$2" remarkable:"/usr/share/remarkable/templates/$FILENAME"
+;;
+connect)
+  ssh remarkable
+;;
+*)
+  echo password upload addtpl connect
+;;
+esac
