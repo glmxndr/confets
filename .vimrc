@@ -10,9 +10,18 @@ let maplocalleader=" "
 let mapleader=','
 let g:mapleader=','
 
+" ### Text width
+set textwidth=78
+set backspace=indent,eol,start
+
 " ### Color scheme
-colorscheme zenburn
+let g:gruvbox_italic=1
+colorscheme gruvbox
 set background=dark
+set number
+set laststatus=2
+set showcmd
+set showtabline=1
 
 " ### status line
 "set laststatus=2
@@ -33,9 +42,5 @@ let g:netrw_liststyle = 3
 let g:netrw_browse_split = 4
 let g:netrw_altv = 1
 let g:netrw_winsize = 25
-augroup ProjectDrawer
-  autocmd!
-  autocmd VimEnter * :Vexplore
-augroup END
 
 

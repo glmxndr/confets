@@ -10,8 +10,7 @@ git clone https://github.com/vim-airline/vim-airline-themes ~/.vim/bundle/vim-ai
 git clone https://github.com/edkolev/tmuxline.vim ~/.vim/bundle/tmuxline.vim
 
 # Color scheme
-mkdir -p ~/.vim/colors
-curl -LSso ~/.vim/colors/zenburn.vim https://raw.githubusercontent.com/jnurmine/Zenburn/master/colors/zenburn.vim
+git clone https://github.com/morhetz/gruvbox.git ~/.vim/bundle/gruvbox
 
 # Syntastic
 git clone --depth=1 https://github.com/vim-syntastic/syntastic.git ~/.vim/bundle/syntastic
