@@ -122,10 +122,10 @@ bindsym $mod+c focus child
 # We use variables to avoid repeating the names in multiple places.
 set $ws1 "1: "
 set $ws2 "2: "
-set $ws3 "3: "
-set $ws4 "4: "
+set $ws3 "3: "
+set $ws4 "4: "
 set $ws5 "5: "
-set $ws6 "6"
+set $ws6 "6: "
 set $ws7 "7"
 set $ws8 "8"
 set $ws9 "9"
@@ -143,28 +143,28 @@ set $ws10 "10"
 #set $ws10 "10"
 
 # switch to workspace
-bindsym $mod+ampersand workspace number $ws1
-bindsym $mod+eacute workspace number $ws2
-bindsym $mod+quotedbl workspace number $ws3
-bindsym $mod+apostrophe workspace number $ws4
-bindsym $mod+parenleft workspace number $ws5
-bindsym $mod+minus workspace number $ws6
-bindsym $mod+egrave workspace number $ws7
-bindsym $mod+underscore workspace number $ws8
-bindsym $mod+ccedilla workspace number $ws9
-bindsym $mod+agrave workspace number $ws10
+bindsym $mod+F1 workspace number $ws1
+bindsym $mod+F2 workspace number $ws2
+bindsym $mod+F3 workspace number $ws3
+bindsym $mod+F4 workspace number $ws4
+bindsym $mod+F5 workspace number $ws5
+bindsym $mod+F6 workspace number $ws6
+bindsym $mod+F7 workspace number $ws7
+bindsym $mod+F8 workspace number $ws8
+bindsym $mod+F9 workspace number $ws9
+bindsym $mod+F10 workspace number $ws10
 
 # move focused container to workspace
-bindsym $mod+Shift+1 move container to workspace number $ws1
-bindsym $mod+Shift+eacute move container to workspace number $ws2
-bindsym $mod+Shift+3 move container to workspace number $ws3
-bindsym $mod+Shift+4 move container to workspace number $ws4
-bindsym $mod+Shift+5 move container to workspace number $ws5
-bindsym $mod+Shift+6 move container to workspace number $ws6
-bindsym $mod+Shift+egrave move container to workspace number $ws7
-bindsym $mod+Shift+8 move container to workspace number $ws8
-bindsym $mod+Shift+ccedilla move container to workspace number $ws9
-bindsym $mod+Shift+agrave move container to workspace number $ws10
+bindsym $mod+Shift+F1 move container to workspace number $ws1
+bindsym $mod+Shift+F2 move container to workspace number $ws2
+bindsym $mod+Shift+F3 move container to workspace number $ws3
+bindsym $mod+Shift+F4 move container to workspace number $ws4
+bindsym $mod+Shift+F5 move container to workspace number $ws5
+bindsym $mod+Shift+F6 move container to workspace number $ws6
+bindsym $mod+Shift+F7 move container to workspace number $ws7
+bindsym $mod+Shift+F8 move container to workspace number $ws8
+bindsym $mod+Shift+F9 move container to workspace number $ws9
+bindsym $mod+Shift+F10 move container to workspace number $ws10
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -237,6 +237,7 @@ client.placeholder      $bg      $black   $fg      $fg      $fg
 client.background       $bg
 
 bar {
+  position top
   colors {
     separator  #666666
     # bar background color
@@ -251,7 +252,13 @@ bar {
     urgent_workspace     $lpurple  $lpurple  $bg
   }
 
-  status_command bumblebee-status -m cpu memory battery nic bluetooth pasink pasource time -p memory.usedonly=1 -p nic.states="^down" -p nic.format="{ip}" -p time.format="%a %d/%m %H:%M:%S" -t gruvbox-powerline
+  status_command bumblebee-status \
+    -m time cpu memory battery nic bluetooth pasink pasource \
+    -p memory.usedonly=1 \
+    -p nic.states="^down" \
+    -p nic.format="{ip}" \
+    -p time.format="%a %d/%m %H:%M:%S" \
+    -t gruvbox-powerline
   #font pango:DejaVu Sans Mono 10
   font pango:Font Awesome 5 Free 10
 }
@@ -261,4 +268,10 @@ bar {
 exec --no-startup-id i3-msg "workspace $ws2; exec firefox"
 
 exec --no-startup-id i3-msg "workspace $ws1; exec $term"
+
+
+### IntelliJ popup fix
+
+for_window [class="^jetbrains-.+"][window_type=dialog] focus
+
 

@@ -1,0 +1,67 @@
+#! /bin/bash
+
+case $1 in
+show)
+bat $(which zz)
+;;
+edit)
+vim $(which zz)
+;;
+sound)
+pavucontrol
+;;
+network)
+  case $2 in
+  fix)
+  nmcli con reload
+  ;;
+  restart)
+  sudo systemctl restart NetworkManager.service
+  esac
+;;
+bluetooth)
+blueman-manager
+;;
+power)
+  case $2 in
+  off)
+  sudo shutdown now
+  ;;
+  suspend)
+  sudo sh -c "echo mem > /sys/power/state"
+  ;;
+  esac
+;;
+udev)
+  case $2 in
+  monitor)
+  sudo udevadm monitor --environment
+  ;;
+  reload)
+  sudo udevadm control --reload-rules
+  sudo udevadm trigger
+  ;;
+  esac
+;;
+beep)
+  case $2 in
+  silent)
+  sudo rmmod pcspkr
+  ;;
+  esac
+;;
+wat)
+zz | grep $2
+;;
+*)
+echo "zz (help|show|edit)"
+echo "zz sound"
+echo "zz network (fix|restart)"
+echo "zz bluetooth"
+echo "zz udev (monitor|reload)"
+echo "zz power (suspend|off)"
+echo "zz beep silent"
+echo "zz wat pattern"
+;;
+esac
+

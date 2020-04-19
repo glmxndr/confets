@@ -321,6 +321,12 @@ before packages are loaded. If you are unsure, you should try in setting them in
       (plist-put (cdr (assoc x popwin:special-display-config)) :noselect t)))
 
 
+  (setq auto-mode-alist
+        (append
+         '(("\\.agda\\'" . agda2-mode)
+           ("\\.lagda.md\\'" . agda2-mode))
+         auto-mode-alist))
+
 )
 
 (defun dotspacemacs/user-config ()

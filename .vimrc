@@ -14,6 +14,13 @@ let g:mapleader=','
 set textwidth=78
 set backspace=indent,eol,start
 
+" ### Motion
+" # Bteween panes
+nnoremap <M-Down>  <C-W><C-J>
+nnoremap <M-Up>    <C-W><C-K>
+nnoremap <M-Right> <C-W><C-L>
+nnoremap <M-Left>  <C-W><C-H>
+
 " ### Color scheme
 let g:gruvbox_italic=1
 colorscheme gruvbox
