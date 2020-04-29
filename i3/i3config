@@ -10,7 +10,7 @@
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 set $mod Mod4
 
-set $term termite
+set $term terminator
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -253,7 +253,7 @@ bar {
   }
 
   status_command bumblebee-status \
-    -m time cpu memory battery nic bluetooth pasink pasource \
+    -m traffic cpu memory battery nic bluetooth pasink pasource arch-update time \
     -p memory.usedonly=1 \
     -p nic.states="^down" \
     -p nic.format="{ip}" \
